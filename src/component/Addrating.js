@@ -1,38 +1,30 @@
 /* -------------------------import section ------------------------------------------ */
 
 import React,{useState} from 'react'
-
-
-
 import './Addrating.css'
-
-
 
 /* -------------------------import section -------------------------------------------- */
 
 
-/* -------------------------Global Variable Section  ---------------------------------- */
-
-
-/* -------------------------Global Variable Section  ---------------------------------- */
-
-
 
 /* -------------------------Function to add Rating for movie  -------------------------- */
-
 
 function Addrating (props) {
 
 // store movie data
 let [movie, setMovie] = useState({name:"", rating:""}); 
 
-// Function triger on submit
-
+// Function trigers on submit
 
 let submitFn = (e) => {
     e.preventDefault();
+    
     if(movie.name === "" || movie.rating === ""){
       alert("All fields are required")
+    return
+  }
+  else if(movie.rating< 0 || movie.rating>10 ){
+    alert("not valid")
     return
   }
   else{
@@ -46,7 +38,7 @@ let submitFn = (e) => {
 
 
   return (
-   <section class="  card rounded-3 rate m-4" >  
+   <section class= "  card rounded-3 rate m-4" >  
      <div class = "container"> 
 
         <div class = "text-center m-3">
@@ -54,7 +46,6 @@ let submitFn = (e) => {
         </div>
 
         <form onSubmit={submitFn} >
-
           <div class="form-group ">
             <input class="form-control  name "
              type ="text" 

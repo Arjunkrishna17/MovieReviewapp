@@ -11,8 +11,6 @@ import './movieCard.css'
 
 function Moviecard(props) {
 
- const count =props.movieData.length;
- console.log(count)
   const renderMovie = props.movieData.map((movie) => {
   
     /*---function to print emoji accoring to rating-*/

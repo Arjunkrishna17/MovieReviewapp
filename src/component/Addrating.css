@@ -1,7 +1,10 @@
 .rate{
     
     width: 15rem;
-    background-color: aliceblue;
+    
     
 }
 
+input::placeholder{
+    text-align: center;
+}
